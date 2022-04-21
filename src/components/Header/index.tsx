@@ -3,6 +3,7 @@ import Switch from "react-switch";
 import { ThemeContext } from "styled-components";
 import { shade } from "polished";
 import { Container } from "./styles";
+import Logo from "./logo.png";
 
 interface Props {
   toggleTheme(): void;
@@ -12,7 +13,9 @@ const Header: React.FC<Props> = ({ toggleTheme }) => {
   const { colors, title } = useContext(ThemeContext);
   return (
     <Container>
-      hello world
+      <div className="logo">
+        <img src={Logo} />
+      </div>
       <Switch
         onChange={toggleTheme}
         checked={title === "dark"}
